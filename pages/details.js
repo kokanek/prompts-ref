@@ -7,8 +7,8 @@ import prompts from "../prompts"
 
 export default function Component() {
   return (
-    <div className="w-full min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-20 w-full bg-background border-b">
+    <div className="w-full min-h-screen  text-foreground">
+      <header className="sticky top-0 z-20 w-full  border-b">
         <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
           <Link href="#" className="flex items-center gap-2 text-lg font-semibold" prefetch={false}>
             <PauseIcon className="w-6 h-6" />
@@ -39,33 +39,57 @@ export default function Component() {
           </div>
         </div>
       </header>
-      <main className="container grid gap-8 px-4 py-8 mx-auto md:px-6 md:grid-cols-2 lg:grid-cols-3">
-        {prompts.map(prompt =>
-          <Card className="group" key={prompt.id}>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  {prompt.type === 'TEXT' ? <BotIcon className="w-6 h-6" /> : <ImageIcon className="w-6 h-6" />}
-                  <h3 className="text-lg font-semibold">{prompt.title}</h3>
-                </div>
-                <Badge variant="outline">{prompt.model}</Badge>
+      <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 min-h-screen px-4 md:px-16 lg:px-32">
+        <div className="flex flex-col gap-4 w-full md:w-1/2">
+          <Card className="p-4">
+            <div className="flex items-center gap-2">
+              <span>Pricing: Free</span>
+            </div>
+            <div className="flex items-center gap-2 mt-2">
+              <span>Open Source</span>
+            </div>
+          </Card>
+          <Card className="p-4">
+            <div className="flex items-center gap-2">
+              <span>More By Jordan</span>
+            </div>
+          </Card>
+          <Card className="p-4">
+            <div className="flex items-center gap-2">
+              <span>Share</span>
+            </div>
+            <div className="flex items-center gap-2 mt-2">
+              <span>Add to Bookmarks</span>
+            </div>
+          </Card>
+        </div>
+        <div className="w-full md:w-1/2">
+          <Card className="p-4">
+            <img
+              src="/placeholder.svg"
+              alt="Tinyjar"
+              className="w-full h-auto"
+              width="600"
+              height="200"
+              style={{ aspectRatio: "600/200", objectFit: "cover" }}
+            />
+            <div className="p-4">
+              <h2 className="text-2xl font-bold">Tinyjar</h2>
+              <p className="text-muted-foreground">
+                By Jordan Kerr
+              </p>
+              <p className="mt-2">
+                Tinyjar is a widget that lets you control all of your donation links in one place for Buymeacoffee, Ko-fi,
+                Patreon, and more.
+              </p>
+              <div className="flex gap-2 mt-4">
+                <Badge variant="default">#nocode</Badge>
+                <Badge variant="default">🔥 Editors Choice</Badge>
               </div>
-            </CardHeader>
-            <CardContent>
-              <p>{prompt.description}</p>
-            </CardContent>
-            <CardFooter>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div>
-                    <p className="font-medium pb-1">Full prompt:</p>
-                    <pre className="text-sm text-muted-foreground border p-2 max-h-32 overflow-auto rounded-md">{prompt.prompt}</pre>
-                  </div>
-                </div>
-              </div>
-            </CardFooter>
-          </Card>)}
-      </main>
+            </div>
+          </Card>
+        </div>
+      </div>
     </div>
   )
 }
