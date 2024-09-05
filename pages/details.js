@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import prompts from "../prompts"
+import MarkdownPreview from "../MarkdownPreview"
 
 export default function Component() {
+
+  const prompt = prompts[0];
+
   return (
     <div className="w-full min-h-screen  text-foreground">
       <header className="sticky top-0 z-20 w-full  border-b">
@@ -42,16 +46,19 @@ export default function Component() {
       <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 min-h-screen px-4 md:px-16 lg:px-32">
         <div className="flex flex-col gap-4 w-full md:w-1/2">
           <Card className="p-4">
-            <div className="flex items-center gap-2">
-              <span>Pricing: Free</span>
-            </div>
-            <div className="flex items-center gap-2 mt-2">
-              <span>Open Source</span>
+            <h2 className="text-2xl font-bold">{prompt.title}</h2>
+            <p className="text-muted-foreground">
+              {prompt.description}
+            </p>
+            <div className="flex gap-2 mt-4">
+              <Badge variant="default">#nocode</Badge>
+              <Badge variant="default">🔥 Editors Choice</Badge>
             </div>
           </Card>
           <Card className="p-4">
-            <div className="flex items-center gap-2">
-              <span>More By Jordan</span>
+            <div className="flex-col items-center gap-2">
+              <h2 className="text-lg">The prompt:</h2>
+              <pre className="text-sm text-muted-foreground border p-2 max-h-64 overflow-auto rounded-md">{prompt.prompt}</pre>
             </div>
           </Card>
           <Card className="p-4">
@@ -65,26 +72,10 @@ export default function Component() {
         </div>
         <div className="w-full md:w-1/2">
           <Card className="p-4">
-            <img
-              src="/placeholder.svg"
-              alt="Tinyjar"
-              className="w-full h-auto"
-              width="600"
-              height="200"
-              style={{ aspectRatio: "600/200", objectFit: "cover" }}
-            />
             <div className="p-4">
-              <h2 className="text-2xl font-bold">Tinyjar</h2>
-              <p className="text-muted-foreground">
-                By Jordan Kerr
-              </p>
-              <p className="mt-2">
-                Tinyjar is a widget that lets you control all of your donation links in one place for Buymeacoffee, Ko-fi,
-                Patreon, and more.
-              </p>
-              <div className="flex gap-2 mt-4">
-                <Badge variant="default">#nocode</Badge>
-                <Badge variant="default">🔥 Editors Choice</Badge>
+              <h2 className="text-lg">Sample output:</h2>
+              <div className="border p-2 rounded-md">
+                <MarkdownPreview content={prompt.output} />
               </div>
             </div>
           </Card>

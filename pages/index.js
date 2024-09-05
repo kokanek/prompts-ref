@@ -46,7 +46,7 @@ export default function Component() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {prompt.type === 'TEXT' ? <BotIcon className="w-6 h-6" /> : <ImageIcon className="w-6 h-6" />}
-                  <h3 className="text-lg font-semibold">{prompt.title}</h3>
+                  <Link href="/details"><h3 className="text-lg font-semibold">{prompt.title}</h3></Link>
                 </div>
                 <Badge variant="outline">{prompt.model}</Badge>
               </div>
