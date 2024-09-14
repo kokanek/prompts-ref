@@ -3,6 +3,7 @@ import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { FaRobot } from "react-icons/fa";
 import { FaImage } from "react-icons/fa6";
 import { Badge } from "@/components/ui/badge"
+import { FaRegCopy } from "react-icons/fa";
 
 export default function PromptCard({ prompt }) {
   return (
@@ -22,8 +23,11 @@ export default function PromptCard({ prompt }) {
       <CardFooter>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div>
-              <p className="font-medium pb-1">Full prompt:</p>
+            <div >
+              <div className="flex items-center justify-between">
+                <p className="font-medium pb-1">Full prompt:</p>
+                <FaRegCopy style={{ fontSize: '1rem' }} />
+              </div>
               <pre className="text-sm text-muted-foreground border p-2 max-h-32 overflow-auto rounded-md">{prompt.prompt}</pre>
             </div>
           </div>
