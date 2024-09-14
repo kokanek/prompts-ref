@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { FaPause, FaSearch, FaPlus } from "react-icons/fa";
+import { FaSearch, FaPlus } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
 
 export default function Navbar() {
