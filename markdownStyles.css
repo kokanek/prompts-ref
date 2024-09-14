@@ -1,0 +1,11 @@
+ul,
+ol {
+  margin-left: 20px;
+  /* Adjust as needed */
+}
+
+ul ul,
+ol ol {
+  margin-left: 20px;
+  /* Adjust as needed */
+}

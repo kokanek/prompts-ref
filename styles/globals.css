@@ -72,3 +72,8 @@
 pre {
   white-space: pre-wrap;
 }
+
+.bg-background {
+  background-color: #ffffff;
+  /* Set to an opaque color */
+}

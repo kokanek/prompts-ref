@@ -40,7 +40,7 @@ export default function Component() {
         </div>
       </header>
       <main className="container grid gap-8 px-4 py-8 mx-auto md:px-6 md:grid-cols-2 lg:grid-cols-3">
-        {prompts.map(prompt =>
+        {[...prompts, ...prompts, ...prompts].map(prompt =>
           <Card className="group" key={prompt.id}>
             <CardHeader>
               <div className="flex items-center justify-between">

@@ -11,8 +11,8 @@ export default function Component() {
   const prompt = prompts[0];
 
   return (
-    <div className="w-full min-h-screen  text-foreground">
-      <header className="sticky top-0 z-20 w-full  border-b">
+    <div className="w-full min-h-screen bg-background  text-foreground">
+      <header className="sticky top-0 z-20 w-full bg-background  border-b">
         <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
           <Link href="#" className="flex items-center gap-2 text-lg font-semibold" prefetch={false}>
             <PauseIcon className="w-6 h-6" />

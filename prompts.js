@@ -10,7 +10,7 @@ const prompts = [
     model: 'GPT-3',
     tags: ['startup', 'marketing', 'product', 'business'],
     output: `Here are some startup ideas focused on the skill of prompt engineering, along with step-by-step roadmaps and unique marketing strategies to reach your target audience.
-### Startup Ideas
+## Startup Ideas
 1. **Prompt Engineering Consultancy**
    - **Overview**: A service that provides businesses with customized prompt engineering solutions to optimize their use of AI tools.
    - **Target Audience**: Businesses using AI technology (e.g., marketing agencies, content creators).
@@ -29,7 +29,15 @@ const prompts = [
 
 5. **AI Content Creation Agency**
    - **Overview**: An agency that leverages prompt engineering to produce high-quality content for clients using generative AI.
-   - **Target Audience**: Businesses needing content marketing solutions.`
+   - **Target Audience**: Businesses needing content marketing solutions.
+   
+   This is some \`code\` which you can use and link to [Google](https://www.google.com).
+   This is some multi-line code:
+   ~~~js
+   let x = 0;
+   let y = x + 1;
+   ~~~
+   `
   },
   {
     id: 2,
